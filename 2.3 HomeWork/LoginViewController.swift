@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
   
-    private let user = User.getUserData()
+    private var user = User.getUserData()
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,7 +24,12 @@ class LoginViewController: UIViewController {
         welcomeVC.user = user
         aboutUserVC.user = user
     }
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+        user = User.getUserData()
+    }
     @IBAction func logInButton() {
         if userNameTextField.text != user.name ||
             passwordTextField.text != user.password {

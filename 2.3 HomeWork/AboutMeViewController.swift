@@ -13,9 +13,6 @@ class AboutMeViewController: UIViewController {
     var user: User!
    
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
-        textView.text = user.person.job
 }
 }

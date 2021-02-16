@@ -28,7 +28,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        welcomeLabel.text = "Welcome, \(user.name) \(user.password)"
+        welcomeLabel.text = "Welcome, \(user.person.name) \(user.person.sureName)"
     }
 
  }
